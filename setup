@@ -1,0 +1,38 @@
+Flowerbud flower1;
+Flowerbud flower2;
+Flowerbud flower3;
+Flowerbud flower4;
+Flowerbud flower5;
+Flowerbud flower6;
+
+void setup () {
+  size (700, 700);
+  flower1 = new Flowerbud(100, 100);
+  flower2 = new Flowerbud(200, 200);
+  flower3 = new Flowerbud(300, 300);
+  flower4 = new Flowerbud(400, 400);
+  flower5 = new Flowerbud(500, 300);
+  flower6 = new Flowerbud(600, 200);
+}
+
+void draw () {
+  background(#EBDFA6);
+  flower1.bloom();
+  flower1.grow();
+ // flower1.wind();
+
+  flower2.bloom();
+  flower2.grow();
+
+  flower3.bloom();
+  flower3.grow();
+
+  flower4.bloom();
+  flower4.grow();
+
+  flower5.bloom();
+  flower5.grow();
+
+  flower6.bloom();
+  flower6.grow();
+}

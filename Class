@@ -1,0 +1,60 @@
+class Flowerbud {
+  float x;
+  float y; 
+  float rate = random(1, 2);
+
+  Flowerbud (float plantX, float plantY) { 
+    x = plantX;
+    y = map(plantY, 0, height, 200, 450);
+
+    bloom();
+    grow();
+    wind();
+  }
+
+  //Methods  
+
+  void bloom () {
+    pushMatrix ();
+    stroke(0);
+    strokeWeight(1);
+    fill(#7F2E46);
+    ellipse(x, y, 80, 100);
+    fill(#CC0C46);
+    ellipse(x, y, 70, 100);
+    fill(#FF0F57);
+    //rotate(radians(5));
+    ellipse(x, y, 55, 90);
+    //rotate(radians(345));
+    //ellipse(x-10, y+15, 30, 90);
+    //rotate(radians(-335));
+    fill(#7F082C);
+    ellipse(x, y, 35, 80);
+    //rotate(radians(330));
+    //ellipse(x-35, y+30, 35, 70);
+    popMatrix();
+  }
+
+  void grow () { 
+
+    float budX = x;
+    float budY=(y* rate)+50; // rate generates number between 1.0 and 2.0 to vary growthrate
+    float budrate = map(mouseY, height, 0, 110, 80); //grow bud width
+    float leftbloom = map(mouseY, 0, height, radians(180), radians(270)); //peel open bud left side
+    float rightbloom = map(mouseY, 0, height, radians(360), radians(270)); //peel open bud right side 
+
+    fill(54, 97, 0);
+    stroke(25, 46, 0);
+    arc( x, y, budrate, 150, radians(90), leftbloom); //left side bloom open 
+    arc( x, y, budrate, 150, rightbloom, radians(450)); //right side bloom open
+    strokeWeight(5);
+    
+  }    
+
+//void wind () {
+    
+//   float wave = wave +0.003;
+//   x = (noise(wave))*x;
+//  
+//  }
+}
